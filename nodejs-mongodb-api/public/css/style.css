@@ -1,0 +1,11 @@
+body {
+    padding-bottom: 30px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.card {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,54 @@
+// views/person/list.ejs
+<div class="container">
+    <h2>People Management</h2>
+
+    <div class="mb-3">
+        <a href="/person/create" class="btn btn-primary">Add New Person</a>
+    </div>
+
+    <% if (typeof error !=='undefined' && error) { %>
+        <div class="alert alert-danger">
+            <%= error %>
+        </div>
+        <% } %>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Mobile Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (people && people.length> 0) { %>
+                        <% people.forEach(person=> { %>
+                            <tr>
+                                <td>
+                                    <%= person.name %>
+                                </td>
+                                <td>
+                                    <%= person.age %>
+                                </td>
+                                <td>
+                                    <%= person.gender %>
+                                </td>
+                                <td>
+                                    <%= person.mobileNumber %>
+                                </td>
+                                <td>
+                                    <a href="/person/<%= person._id %>/edit" class="btn btn-sm btn-info me-2">Edit</a>
+                                    <a href="/person/<%= person._id %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="5" class="text-center">No people found</td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>People List</h2>
+
+  <div *ngIf="loading" class="loading">Loading people…</div>
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <button class="btn btn-primary mb-3" (click)="addNewPerson()">Add New Person</button>
+
+  <table class="table table-striped" *ngIf="people.length">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Age</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of people">
+        <td>{{p.id}}</td>
+        <td>{{p.firstName}}</td>
+        <td>{{p.lastName}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.age}}</td>
+        <td>
+          <button class="btn btn-info btn-sm mr-2" (click)="editPerson(p.id)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deletePerson(p.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!people.length && !loading" class="alert alert-info">
+    No people found. Click “Add New Person” to create one.
+  </div>
+</div>

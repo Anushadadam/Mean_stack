@@ -1,0 +1,32 @@
+{
+  "people": [
+    {
+      "id": 3,
+      "firstName": "Anusha",
+      "lastName": "Dadam",
+      "email": "anusha@gmail.com",
+      "age": 19
+    },
+    {
+      "id": 2,
+      "firstName": "aaa",
+      "lastName": "bbb",
+      "email": "email@gmail.com",
+      "age": 20
+    },
+    {
+      "id": 1,
+      "firstName": "Anusha",
+      "lastName": "dadam",
+      "email": "an@gmail.com",
+      "age": 20
+    },
+    {
+      "id": 0,
+      "firstName": "hello",
+      "lastName": "world",
+      "email": "h@gmail.com",
+      "age": 18
+    }
+  ]
+}

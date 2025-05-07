@@ -1,0 +1,9 @@
+.loading {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn {
+    margin-right: 5px;
+}

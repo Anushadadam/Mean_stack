@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>Add New Person</h2>
+
+    <form method="POST" action="/person">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control <%= errors.name ? 'is-invalid' : '' %>" id="name" name="name"
+                value="<%= person.name || '' %>" required>
+            <% if (errors.name) { %>
+                <div class="invalid-feedback">
+                    <%= errors.name.message %>
+                </div>
+                <% } %>
+        </div>
+
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control <%= errors.age ? 'is-invalid' : '' %>" id="age" name="age"
+                value="<%= person.age || '' %>" required>
+            <% if (errors.age) { %>
+                <div class="invalid-feedback">
+                    <%= errors.age.message %>
+                </div>
+                <% } %>
+        </div>
+
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select <%= errors.gender ? 'is-invalid' : '' %>" id="gender" name="gender" required>
+                <option value="" <%=!person.gender ? 'selected' : '' %>>Select Gender</option>
+                <option value="Male" <%=person.gender==='Male' ? 'selected' : '' %>>Male</option>
+                <option value="Female" <%=person.gender==='Female' ? 'selected' : '' %>>Female</option>
+                <option value="Other" <%=person.gender==='Other' ? 'selected' : '' %>>Other</option>
+            </select>
+            <% if (errors.gender) { %>
+                <div class="invalid-feedback">
+                    <%= errors.gender.message %>
+                </div>
+                <% } %>
+        </div>
+
+        <div class="mb-3">
+            <label for="mobileNumber" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control <%= errors.mobileNumber ? 'is-invalid' : '' %>" id="mobileNumber"
+                name="mobileNumber" value="<%= person.mobileNumber || '' %>" required>
+            <% if (errors.mobileNumber) { %>
+                <div class="invalid-feedback">
+                    <%= errors.mobileNumber.message %>
+                </div>
+                <% } %>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="/person" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
